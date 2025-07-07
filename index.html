@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by anonymous (http://jsbin.com/fapejukegu/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100 причин почему я люблю тебя жаным</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.8)), url("photo_2025.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      animation: fadeIn 2s ease;
+    }
+
+    header img {
+      width: 200px;
+      border-radius: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 20px;
+      color: #ffe5ec;
+    }
+
+    .question-block, .reasons {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      display: none;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #ff85a2;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff5b84;
+      transform: scale(1.05);
+    }
+
+    .reason {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-left: 4px solid #ffc0cb;
+      background-color: rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .reason:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+
+    .reason-content {
+      display: none;
+      margin-top: 10px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mid.mp3" type="audio/mp3">
+    Your browser does not support MIDI.
+  </audio>
+
+  <header>
+    <img src="photo_2025.jpeg" alt="Наше фото" />
+    <h1>100 причин почему я люблю тебя жаным</h1>
+  </header>
+
+  <div class="question-block" id="question1">
+    <h2>Любишь?</h2>
+    <button class="btn" onclick="next('люблю')">Люблю</button>
+    <button class="btn" onclick="wrongAnswer(this)">Нет</button>
+    <button class="btn" onclick="wrongAnswer(this)">Блмим</button>
+  </div>
+
+  <div class="question-block" id="question2">
+    <h2>Кымнын кызы?</h2>
+    <button class="btn" onclick="next('сенны')">Сенын</button>
+    <button class="btn" onclick="wrongAnswer(this)">Блмим</button>
+    <button class="btn" onclick="wrongAnswer(this)">Ешкмнын</button>
+  </div>
+
+  <div class="reasons" id="reasons">
+    <div class="reason" onclick="toggleReason(this)"><b>1.</b>  Причина Жаным<div class="reason-content">Ен бырыншы себеп ретнде саган деген сезген сезмды ешкмге сезбегеным, омырымде бырыншы рет я почувствовал что маган быреуге п емес, барбр емес, всегда быреудын камын ойлап, комфортно болсын деп журе алатыным екены, быз таныс 3-4 аралыктын ышынде осындай сезым басында марковада 1% гана болсада, кун сайн, ай сайн, жыл сайн кобейп, сонгы февральский гагаринада 70-80% болды, одан кейн мартовский гагаринада толыкканда 90-95% болды, и уже наконец то казыр басымыздан бары откеннен кейн, бырге талай тун, талай кун, жазасып, звондасып урсп, кырылып, татуласп, быр бырмздн кандай адам екенмзды корп, кабылдаганнан кейн толык 100% болды, оган мын да быр алгыс</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>2.</b> Причина Журегым<div class="reason-content"> Калай кулкылы естлмесе де былай буйрганы туралы, Алла тагаланын жазганы туралы ойлар да коп келеды, оны да себебынын быры деп санай аламын, себебы баскаша тусындыре алмаймын калай 3 жыл бойы саган 1 артык соз, артык движение истеуге коркып, ораза басталганда коркыныш, уаймнын бары кетып, саган барын ашык айтп, тусндре алганымды, мен ушн быр знак сиякты сезылды оте катты именно ораза айнда басталганын барын, еще тт да коп шгп кеттго ораза айнда кослгандар хайрлыы деп, соны шын болсакен деп тылеп журп едм кезнде</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>3.</b> Причина Журека<div class="reason-content">Кез келген урыс, маселе, тусыныспеушылыкты шешетын жолдарымыз жагады, кышкентай каягм жегееен балдар сиякты емес, уже саналы адамдар сиякты танга дейн сойлессекте аркым оз ойын, озынын бул жагдайды калай туснп турганын айтп, быр бырмзге барын тусндрп, татуласп бырак уйктайтынымыз сумдк жагады, всегда озмнын болашак отношениям туралы ойлайтынып осы болатын, себебы я никогда не хотел бы что бы сен коныл куйсыз бртурлы болп уйктаганынды, кырылсак кырлайк, бырак барын шешп гушты болп жатканмз жаксы</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>4.</b> Причина Жаны<div class="reason-content">Твоя любовь ко мне, мен канша жерден идеальный болмасам да, канша косяк истеп, куйдрп, нервна тисем де барыне шыдап, реттеп, киын кезде касмда болп, поддержканы олп тогп бересын, мен онын барыын сумдык багалаймын, осндай адаммен брге болганыме шукыршылык етемын, может саган коп айтпайтн шгарм осндай дуниены в тебе как я ценю, бырак оте катты багалаймын, осы озмнын узак емес 20 жылдык омырымде и в горе и в радости деп куана турып сены гана айта аламын</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>5.</b> Причина Журек<div class="reason-content">Твои отношения с моими родителями, былмим калай екенын, бары сены сумдык жаксы кореды, уже апа да мама да ознын кыздары сиякты шырылдап турады сен туралы айтпай кетсем, кадмгди алдап сулап чай тамак берп столга отыргызып, адлееет деп бастап кетеды ангмелерын, уйткены сен туралы шыныменде жаксы гана ойлап, жаксы кореды, ойткены оздерынын коздеры де жеттгой осы кыска уакттын ишнде калай жаксы жака озгергенымды, и бары только быр сладостьтын аркаснда екенын, мансурдын озы канша жерден уебок болса да женге десе олп турадыгой, сол ушын осы уакыттын араснда букыл отбасыммен калай жаксы араласканынды корып, мен одан да катты куанамын, жане болашак та да бары осыдан жаксы болмаса, точно жаман болмайды</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>6.</b> Причина Сладость<div class="reason-content">Твой ум, канша рет айтсамда, кайталаудан шаршамаймын, омырымде сойлескен ен акылды адамнын бырысын, именно адами жагынан, всегда мены жуз пайызга тусынып турасн, коныл куйым барма, жокпа, бырбале болдыма болмадма, все чувствуешь, менын кандай сорлы адам екенмд блеснго барын жактрмай адам ретнде сагамайтнмд, бырак каждый раз саган келгенде мысык болп калп, айткан создерынн кулак асп, советтерынды всегда тындайтынмын, себебы сен бары заранее пландап, болашагын ойлап, истесе не болад, истемесе не болад деп расчеттап бырак айтасн, ещкашан ойланбай сойлей салмайсн, советты похуй мынау тезрек кетснш деми, шынмен де уаймдап, заботиться еткеннен кейн коясн, кудайдан всегда акылды айел сурайтынмын, айтадго бас екеу болмай мал тортеу болмайды деп, озмнын кандай адам екенмд прекрасно былемгой, сол себепты де касма осндай быр санамды оятп, есмды жидратн, ап адемы, быржарым метрлык бакыт сыйлады маган, осындай турмен болашакта да отбасы болып, шанырак курсак, всегда касмда болп, акылын айтп, дурс жолга сала алатын адаммен болганма куаныштымын</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>7.</b> Причина Сатыбалдиева<div class="reason-content"> Екемз бырдеймз, осы коп жылдар бойы екемыз жумыс ретнде де, личный ретнде де оте коп ситуациядан, сойлесуден, ангмеден откен болатынбыз, сол кезде байкаганымнан екемз де кобынесе быр зат туралы бырдей ойлаймыз, истеймыз, екемз вообще артурлы екы турлы болсакта, почти 90% заттар туралы ойымыз, ысымыз тура сайкес келеды, даже олендердын озыыы толыктай бырдей гой, алиса играй деп талай отратынбыз, быр брмзге тур берми котерп, сен отрктен саган унамайтндай котерме деп койыып, еще ол кезде в отношениях кой апшем, екемзде дым демимз, айткан истеген дуниенын бары арамзда калып еще</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>8.</b> Причина Сатыбалдиеуа<div class="reason-content">Сенын оз озын устаун, кылыктарын, адеттерын, ен баснда козм тускен зат ол сенын ышпейтынын, шекпейтынын, боктамайтынын, адамнын барыне жаксы козбен карап, жаксы зат айтп, ешкмды артнан жамандамайтнсн, ойнда ешкашан быр артык ой, зулымдык болмайтын, сонына катты кызыгатынмын, уйткены менын озым вообще ондай емеспынгой, сенын озынын мынеызн, истейтын ис арекеттерынын бары озне сумдк жарасады, озын такая сладкая, красивая, миниатюрная, нежная, бырак керек кезде быреу бырдеме айтса или тиссе сыгып аласн ойланбай, адемы жылан сияктсн, тиспесен, бырыншы тиспейды, бырак не дай аллах брнше тисп койсан олдым ди бер, сосыыын сумдк сдержанная, сыпайы, ерсы заттарды вообще истемейсн, всегда оз озынды кай кезде калай устап, не айту керек екенын былып турасын, неше турды жын жыбырдын, ишеьын кангыратын, отрк айтатын адамдардын ишнде мен ушн жалгыз жарык сиякты болдын озын, одан кейнде калай нуркентте козым тусты, сол куйы алынбады алы</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>9.</b> Причина Айелым<div class="reason-content">Жаксы заттарга гана итересын, осы уакытка дейн за сильным мужчиной стоит женщина деген нарсены хуйня деп ойлайтынмын, пока сены кездестырмегенымше, сенмен осы создын магынасы айдай айкын болдыгой, ардайым жаксы затты гана айтып, болашагымз гушты болатындай етып мены всегда жаксырак болуга, к лучшему стремиться етуге всегда итермелеп турасын, сенын арканда болашакты ойлап, отбасы болсак еш нарсе ден кысылмайтндай, я сейчас мужу позвоню, вы знаете кто мой муж деген дарежеге дейн хуярить ететын боламын, менын уйдеглерым истете алмаган затты, сен озын ак истетп журсынгой, ерте будильникка туру, ответственность алу, киым жинау, енды курс окып, залга барп, праваны аласын буйрса жаз быткенше, саган уаде беремын жаным</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>10.</b> Причина Моя красивая<div class="reason-content"> Ты заставила меня хотеть будущее для нас, даже когда я не хотел его для себя, мен всегда жнды болатнмын, ешкмды озмнын жакн адамым санай алмайтынмын, дос болсн, коллега болсн, кыз болсн, ешкм маган жакн болмайтн жаксы сойлессем де, ойымнын бары олып талып шаршаганша жумыс истеп ауша табу болатын, выгорание болып, шаршап, энергиям жок кезде, ышмдегы пустотаны виски, темекы, кыздармен толтыратынмын озмды сал кышкене болсын бакытты сезну ушын, бырак сен омрмде пайда болганнан кейн, озмд бактты сезну ушн ондай хуйнянын ешкайсы керек емес екенын тусндм, просто жумста отканда, сенын кружогнды быр корп, суретнд быр корп, татты кызмды быр корп сразу энергиям толп кетеды, жумстан шаршап шыкканда озмнын кудай бере салган кызм Уйктамай сойлесу ушн кутп отканынын озы мены сумдк куантады, уйге аман есен келып, 1 сагаттай сойлесп, кызм уже шаршап уйктаганда, сладкая бола уйктаганына караап жатамын, сонда ойлайтнм неужели мен омыр бойы издеп, калаган бакыт осы 4 жыл бойы маган напротив отырды, неужели мен осншама уакыт айта алмай журдм, неужели енды осы сладость меныкы деп сенби риза болп корыып отрам, аллага шукыр осндай кыз бергеныне маган. Люблю тебя, люблю</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>11.</b> Причина Сладкая<div class="reason-content">Приняла меня таким какой я есть. Мены сенен узак былген адам аз, бырак полностью букыл минустарыммен бырге былетын адам только сен гана, осы уакыт бойы ты прекрасно видела какой обрад жизни я веду, как я бухаю, как я курю, как я обращаюсь с девушками, какой я идиот, кырсык, уйдеглермен дурс сойлеспим, ешкм адам сиякт кормим, полный жындынын комплектсы екенын корп турдын, бырак сонын ознде осуждать етпи, коркпай менмен жан жосн ретнде, аган ретнде осы уакыт бойы ахуенно общалась, заботасымен бырге косп, менде ондайды корп д десе сразу барн истеп, камтамасыз етуге тырысатынмын, мены катты тангалдырганы ишпейтн, шекпейтн отбасыда омыр бойы омыр сурып, бырак полюбому кайтпай дальше сойлесп, жаксы корп, менмен болашак калаганын болды, осы мены сумдк катты тангалдырды, и оснын барын коре тура менде саган сайкес келу ушын жаман кылыктармнын айрылгм келп, ишуды де койдм, шегуды де азайттм, редбулды алп тастадм, кофены миримально ишемын, танга дейн кангу, магынасыз лягып журу деген атымен жок болды, осынын бары маган баснда сенгенынын аркасы гой, и осндай темппен болашакта осы сенымынын барын актап, сумдык жемысын алатыгдай етып истейтыныме сенымдымын, болашакта ешкандай артык ойсыз, бакытты кылуга барын истеймын</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>12.</b> Причина Махаббатым<div class="reason-content"> Мелочи которые ты делаешь, калай дурыс тусндру керек екенын точно былмеймын, бырак сен истейтын, айтатын, ойланбай автоматический истеп коятн заттарнын барын обожаю, примерно казыр ол кандай заттар деее миын ашп отргой, онын ишине мен саган всегда айтатын гандида отрган кездегы маган жетп алп астнг ернынд шгарп койп суидык сладкая болп жаловаться ететынын кыреды, таксида сены уйнен алп кеткен кезде мены кушактап, мойнмнан быр искем, бетмнен устап ерндермнын битп анау шетнен суйгенын, машинада отканда колмды алп белыне койп коюын, люблю дегенде факю деп айтуын(айтты екен деп факю дей беру жогнан, в меру истегенын гушты), алы толыктай люблю деп жаза алмай болп жазуыыын и я тебя тебя койп или блю деп койп майсыыып сладкая болп, гандидан кайтаанда шарша кетп такси кутп турган кездегы маган суйкенып туруын, всегда видеомен сойлесеенде брншы уцктап калп мен а дегенде шошп оян кетуын, анау кыздын стикерлеры, уже осы заттын бары у меня с тобой ассоциируются, ойма осган уксас брдепе корсем сразуу сен тусп кетесн, негзы осындай заттар мен ушн милооон, айта берсен бытпиды, есме тускенын жазп жатырмыыын</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>13.</b> Причина Келын<div class="reason-content">Еркелейтыныын, омырымде ешкмнын еркелегены маган жакпайтын еды, именно саган келп тырелген кезде ваааа деп атлп турамынгой, былмим калай корсету керек екенын, бырак сумдык гуштыыы еркелейсн, прям желаниен ашлп кетед каждый раз все сильнее и сильнее радовать тебя, всегда жана зат болсын, жана нарсе болсн алп, истеп, корсетп, айтуга, именно саган келгенде омыр бойы осындай артык ойсыз бактты болып еркелеп жургенынды калаймын, сол себептен де всегда не калап турсн, не алгн келп тур, карнын ашп турма уаймдап турамын, уйткены сенын еркелеп, ознды Гуштыыы сезнгенын - значит мен бе озмды тура солай сезынемын</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>14.</b> Причина Любовь<div class="reason-content">Алдндагы ерканын айткан создеры есме тусп кеттго, сенмен анандай гой, мысалга в отношениях еркек - озын еркек сезыну керек, барын шешу керек, истеу кетек, айел - озын айеыл сезыну керек, просто адемы, назык болп, беттен быр суйп койп колнан бары келед деп быр поддержкасн берп кою керек менын оймша, и бзде тура соган бары сайкес келедыгой, в отношениях с тобой я чувствую себя мужчиной, ал менын менын ап адемы, сып сладкая жанымсын, мысалга казакстанда кобысыне ондай заттар аусп кеткен гой, даже т мен е де солай гой т еркек сиякт, ал е айел сиякты, мен ондайды вообще каламайтынмын, а с тобой все также идеально как я хотел, озым кудайдан тылеп журп едм, тура берптгоо, мен дау кап кара сап сакалды аю, сен касмдагы миниатюрная гушты мынезбен сладость, тура мага и медведь боп туркко</div></div>
+    <div class="reason" onclick="toggleReason(this)"><b>15.</b> Причина Женушка<div class="reason-content">Недоступность, я обожаю то что ты только моя, и ознде соны прекрасно тусынып турасн, баска еркектерге артык созын, движениян, кушактасп амандасу, сызылып мацсп сойлеу деген жок, то ли озын сондайсн или мены сыйлайсн, или екеуде ма, лично я вообще байкамаппын что бы хоть что то лишнее делала, караап риза болп отрам нау менын кызымгооо деп койп, потому что так и должно быть, сен осыныыын барын жакс туснесн, и блп турасн что можно и что нельзя, и мен де болмайтн затка кызганп жанганда как есть по факту айтасн сен жанатындай мен иштеме истемедм деп, ойткены кай кезде кимен калай сойлесу кетек екенын максимально жаксы былесн, ары кетсе баска еркекпен ангыме айтп калатн шгарсн типо муса деген сиякты уебокпен, бырак одан артык вообще кетписн, и только со мной еркелеп, тап татты болп, нежная болыыып отрасн букыл мен жаксы коретын мынезынды корсетыып, каждый раз карап каждый раз заново влюбляюсь</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>16.</b> Причина Скоро<div class="reason-content">Полный текст причины 16</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>17.</b> Причина Скоро<div class="reason-content">Полный текст причины 17</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>18.</b> Причина Скоро<div class="reason-content">Полный текст причины 18</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>19.</b> Причина Скоро<div class="reason-content">Полный текст причины 19</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>20.</b> Причина Скоро<div class="reason-content">Полный текст причины 20</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>21.</b> Причина Скоро<div class="reason-content">Полный текст причины 21</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>22.</b> Причина Скоро<div class="reason-content">Полный текст причины 22</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>23.</b> Причина Скоро<div class="reason-content">Полный текст причины 23</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>24.</b> Причина Скоро<div class="reason-content">Полный текст причины 24</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>25.</b> Причина Скоро<div class="reason-content">Полный текст причины 25</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>26.</b> Причина Скоро<div class="reason-content">Полный текст причины 26</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>27.</b> Причина Скоро<div class="reason-content">Полный текст причины 27</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>28.</b> Причина Скоро<div class="reason-content">Полный текст причины 28</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>29.</b> Причина Скоро<div class="reason-content">Полный текст причины 29</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>30.</b> Причина Скоро<div class="reason-content">Полный текст причины 30</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>31.</b> Причина Скоро<div class="reason-content">Полный текст причины 31</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>32.</b> Причина Скоро<div class="reason-content">Полный текст причины 32</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>33.</b> Причина Скоро<div class="reason-content">Полный текст причины 33</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>34.</b> Причина Скоро<div class="reason-content">Полный текст причины 34</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>35.</b> Причина Скоро<div class="reason-content">Полный текст причины 35</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>36.</b> Причина Скоро<div class="reason-content">Полный текст причины 36</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>37.</b> Причина Скоро<div class="reason-content">Полный текст причины 37</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>38.</b> Причина Скоро<div class="reason-content">Полный текст причины 38</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>39.</b> Причина Скоро<div class="reason-content">Полный текст причины 39</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>40.</b> Причина Скоро<div class="reason-content">Полный текст причины 40</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>41.</b> Причина Скоро<div class="reason-content">Полный текст причины 41</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>42.</b> Причина Скоро<div class="reason-content">Полный текст причины 42</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>43.</b> Причина Скоро<div class="reason-content">Полный текст причины 43</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>44.</b> Причина Скоро<div class="reason-content">Полный текст причины 44</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>45.</b> Причина Скоро<div class="reason-content">Полный текст причины 45</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>46.</b> Причина Скоро<div class="reason-content">Полный текст причины 46</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>47.</b> Причина Скоро<div class="reason-content">Полный текст причины 47</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>48.</b> Причина Скоро<div class="reason-content">Полный текст причины 48</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>49.</b> Причина Скоро<div class="reason-content">Полный текст причины 49</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>50.</b> Причина Скоро<div class="reason-content">Полный текст причины 50</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>51.</b> Причина Скоро<div class="reason-content">Полный текст причины 51</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>52.</b> Причина Скоро<div class="reason-content">Полный текст причины 52</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>53.</b> Причина Скоро<div class="reason-content">Полный текст причины 53</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>54.</b> Причина Скоро<div class="reason-content">Полный текст причины 54</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>55.</b> Причина Скоро<div class="reason-content">Полный текст причины 55</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>56.</b> Причина Скоро<div class="reason-content">Полный текст причины 56</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>57.</b> Причина Скоро<div class="reason-content">Полный текст причины 57</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>58.</b> Причина Скоро<div class="reason-content">Полный текст причины 58</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>59.</b> Причина Скоро<div class="reason-content">Полный текст причины 59</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>60.</b> Причина Скоро<div class="reason-content">Полный текст причины 60</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>61.</b> Причина Скоро<div class="reason-content">Полный текст причины 61</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>62.</b> Причина Скоро<div class="reason-content">Полный текст причины 62</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>63.</b> Причина Скоро<div class="reason-content">Полный текст причины 63</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>64.</b> Причина Скоро<div class="reason-content">Полный текст причины 64</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>65.</b> Причина Скоро<div class="reason-content">Полный текст причины 65</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>66.</b> Причина Скоро<div class="reason-content">Полный текст причины 66</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>67.</b> Причина Скоро<div class="reason-content">Полный текст причины 67</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>68.</b> Причина Скоро<div class="reason-content">Полный текст причины 68</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>69.</b> Причина Скоро<div class="reason-content">Полный текст причины 69</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>70.</b> Причина Скоро<div class="reason-content">Полный текст причины 70</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>71.</b> Причина Скоро<div class="reason-content">Полный текст причины 71</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>72.</b> Причина Скоро<div class="reason-content">Полный текст причины 72</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>73.</b> Причина Скоро<div class="reason-content">Полный текст причины 73</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>74.</b> Причина Скоро<div class="reason-content">Полный текст причины 74</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>75.</b> Причина Скоро<div class="reason-content">Полный текст причины 75</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>76.</b> Причина Скоро<div class="reason-content">Полный текст причины 76</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>77.</b> Причина Скоро<div class="reason-content">Полный текст причины 77</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>78.</b> Причина Скоро<div class="reason-content">Полный текст причины 78</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>79.</b> Причина Скоро<div class="reason-content">Полный текст причины 79</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>80.</b> Причина Скоро<div class="reason-content">Полный текст причины 80</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>81.</b> Причина Скоро<div class="reason-content">Полный текст причины 81</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>82.</b> Причина Скоро<div class="reason-content">Полный текст причины 82</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>83.</b> Причина Скоро<div class="reason-content">Полный текст причины 83</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>84.</b> Причина Скоро<div class="reason-content">Полный текст причины 84</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>85.</b> Причина Скоро<div class="reason-content">Полный текст причины 85</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>86.</b> Причина Скоро<div class="reason-content">Полный текст причины 86</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>87.</b> Причина Скоро<div class="reason-content">Полный текст причины 87</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>88.</b> Причина Скоро<div class="reason-content">Полный текст причины 88</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>89.</b> Причина Скоро<div class="reason-content">Полный текст причины 89</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>90.</b> Причина Скоро<div class="reason-content">Полный текст причины 90</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>91.</b> Причина Скоро<div class="reason-content">Полный текст причины 91</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>92.</b> Причина Скоро<div class="reason-content">Полный текст причины 92</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>93.</b> Причина Скоро<div class="reason-content">Полный текст причины 93</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>94.</b> Причина Скоро<div class="reason-content">Полный текст причины 94</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>95.</b> Причина Скоро<div class="reason-content">Полный текст причины 95</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>96.</b> Причина Скоро<div class="reason-content">Полный текст причины 96</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>97.</b> Причина Скоро<div class="reason-content">Полный текст причины 97</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>98.</b> Причина Скоро<div class="reason-content">Полный текст причины 98</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>99.</b> Причина Скоро<div class="reason-content">Полный текст причины 99</div></div>
+<div class="reason" onclick="toggleReason(this)"><b>100.</b> Причина Скоро<div class="reason-content">Полный текст причины 100</div></div>
+    <!-- Добавь остальные причины так же -->
+  </div>
+
+  <script>
+    let currentQuestion = 1;
+
+    window.onload = () => {
+      document.getElementById('question1').style.display = 'block';
+    }
+
+    function next(correct) {
+      if (currentQuestion === 1 && correct === 'люблю') {
+        document.getElementById('question1').style.display = 'none';
+        document.getElementById('question2').style.display = 'block';
+        currentQuestion++;
+      } else if (currentQuestion === 2 && correct === 'сенны') {
+        document.getElementById('question2').style.display = 'none';
+        document.getElementById('reasons').style.display = 'block';
+      }
+    }
+
+    function wrongAnswer(btn) {
+      btn.innerText = 'Сумдык кате журека';
+      btn.style.background = '#444';
+      btn.disabled = true;
+    }
+
+    function toggleReason(el) {
+      const content = el.querySelector('.reason-content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
