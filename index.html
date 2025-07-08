@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!--
-Created using JS Bin
-http://jsbin.com
-
-Copyright (c) 2025 by anonymous (http://jsbin.com/fapejukegu/1/edit)
-
-Released under the MIT license: http://jsbin.mit-license.org
--->
-<meta name="robots" content="noindex">
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -23,7 +14,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       margin: 0;
       padding: 0;
       font-family: 'Georgia', serif;
-      background: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.8)), url("photo_2025.jpeg") no-repeat center center fixed;
+      background: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.8)), url("background.jpg") no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       text-shadow: 1px 1px 3px #000;
@@ -41,6 +32,12 @@ Released under the MIT license: http://jsbin.mit-license.org
       border-radius: 20px;
       border: 3px solid rgba(255, 255, 255, 0.7);
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
     }
 
     h1 {
@@ -99,39 +96,55 @@ Released under the MIT license: http://jsbin.mit-license.org
   </style>
 </head>
 <body>
-  <audio autoplay loop>
+
+  <!-- Музыка (по кнопке) -->
+  <button class="btn" onclick="document.getElementById('bgmusic').play()">🎵 Включить музыку</button>
+  <audio id="bgmusic" loop>
     <source src="music.mid.mp3" type="audio/mp3">
-    Your browser does not support MIDI.
+    Ваш браузер не поддерживает воспроизведение музыки.
   </audio>
-<button onclick="document.getElementById('music').play()" class="btn">
-  🎵 Включить музыку
-</button>
 
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
+  <!-- Фото с переходом -->
   <header>
-    <img src="photo_2025.jpeg" alt="Наше фото" />
+    <a href="gallery.html">
+      <img src="photo_2025.jpeg" alt="Наше фото" />
+    </a>
     <h1>100 причин почему я люблю тебя жаным</h1>
   </header>
 
+  <!-- Вопросы -->
   <div class="question-block" id="question1">
     <h2>Любишь?</h2>
     <button class="btn" onclick="next('люблю')">Люблю</button>
-    <button class="btn" onclick="wrongAnswer(this)">Нет</button>
-    <button class="btn" onclick="wrongAnswer(this)">Блмим</button>
+    <button class="btn" onclick="resetToFirst(this)">Нет</button>
+    <button class="btn" onclick="resetToFirst(this)">Блмим</button>
   </div>
 
   <div class="question-block" id="question2">
     <h2>Кымнын кызы?</h2>
     <button class="btn" onclick="next('сенны')">Сенын</button>
-    <button class="btn" onclick="wrongAnswer(this)">Блмим</button>
-    <button class="btn" onclick="wrongAnswer(this)">Ешкмнын</button>
+    <button class="btn" onclick="resetToFirst(this)">Блмим</button>
+    <button class="btn" onclick="resetToFirst(this)">Ешкмнын</button>
   </div>
 
+  <div class="question-block" id="question3">
+    <h2>Фамилия?</h2>
+    <button class="btn" onclick="resetToFirst(this)">Жумабекова</button>
+    <button class="btn" onclick="next('Сатыбалдиева')">Сатыбалдиева</button>
+    <button class="btn" onclick="resetToFirst(this)">Аликкызы</button>
+  </div>
+
+  <div class="question-block" id="question4">
+    <h2>Кымды любишь?</h2>
+    <button class="btn" onclick="resetToFirst(this)">Адлет</button>
+    <button class="btn" onclick="next('Аю')">Аю</button>
+    <button class="btn" onclick="resetToFirst(this)">Адиет</button>
+  </div>
+
+  <!-- Причины -->
   <div class="reasons" id="reasons">
-    <div class="reason" onclick="toggleReason(this)"><b>1.</b>  Причина Жаным<div class="reason-content">Ен бырыншы себеп ретнде саган деген сезген сезмды ешкмге сезбегеным, омырымде бырыншы рет я почувствовал что маган быреуге п емес, барбр емес, всегда быреудын камын ойлап, комфортно болсын деп журе алатыным екены, быз таныс 3-4 аралыктын ышынде осындай сезым басында марковада 1% гана болсада, кун сайн, ай сайн, жыл сайн кобейп, сонгы февральский гагаринада 70-80% болды, одан кейн мартовский гагаринада толыкканда 90-95% болды, и уже наконец то казыр басымыздан бары откеннен кейн, бырге талай тун, талай кун, жазасып, звондасып урсп, кырылып, татуласп, быр бырмздн кандай адам екенмзды корп, кабылдаганнан кейн толык 100% болды, оган мын да быр алгыс</div></div>
+    <div class="reason" onclick="toggleReason(this)">
+<b>1.</b>  Причина Жаным<div class="reason-content">Ен бырыншы себеп ретнде саган деген сезген сезмды ешкмге сезбегеным, омырымде бырыншы рет я почувствовал что маган быреуге п емес, барбр емес, всегда быреудын камын ойлап, комфортно болсын деп журе алатыным екены, быз таныс 3-4 аралыктын ышынде осындай сезым басында марковада 1% гана болсада, кун сайн, ай сайн, жыл сайн кобейп, сонгы февральский гагаринада 70-80% болды, одан кейн мартовский гагаринада толыкканда 90-95% болды, и уже наконец то казыр басымыздан бары откеннен кейн, бырге талай тун, талай кун, жазасып, звондасып урсп, кырылып, татуласп, быр бырмздн кандай адам екенмзды корп, кабылдаганнан кейн толык 100% болды, оган мын да быр алгыс</div></div>
     <div class="reason" onclick="toggleReason(this)"><b>2.</b> Причина Журегым<div class="reason-content"> Калай кулкылы естлмесе де былай буйрганы туралы, Алла тагаланын жазганы туралы ойлар да коп келеды, оны да себебынын быры деп санай аламын, себебы баскаша тусындыре алмаймын калай 3 жыл бойы саган 1 артык соз, артык движение истеуге коркып, ораза басталганда коркыныш, уаймнын бары кетып, саган барын ашык айтп, тусндре алганымды, мен ушн быр знак сиякты сезылды оте катты именно ораза айнда басталганын барын, еще тт да коп шгп кеттго ораза айнда кослгандар хайрлыы деп, соны шын болсакен деп тылеп журп едм кезнде</div></div>
     <div class="reason" onclick="toggleReason(this)"><b>3.</b> Причина Журека<div class="reason-content">Кез келген урыс, маселе, тусыныспеушылыкты шешетын жолдарымыз жагады, кышкентай каягм жегееен балдар сиякты емес, уже саналы адамдар сиякты танга дейн сойлессекте аркым оз ойын, озынын бул жагдайды калай туснп турганын айтп, быр бырмзге барын тусндрп, татуласп бырак уйктайтынымыз сумдк жагады, всегда озмнын болашак отношениям туралы ойлайтынып осы болатын, себебы я никогда не хотел бы что бы сен коныл куйсыз бртурлы болп уйктаганынды, кырылсак кырлайк, бырак барын шешп гушты болп жатканмз жаксы</div></div>
     <div class="reason" onclick="toggleReason(this)"><b>4.</b> Причина Жаны<div class="reason-content">Твоя любовь ко мне, мен канша жерден идеальный болмасам да, канша косяк истеп, куйдрп, нервна тисем де барыне шыдап, реттеп, киын кезде касмда болп, поддержканы олп тогп бересын, мен онын барыын сумдык багалаймын, осндай адаммен брге болганыме шукыршылык етемын, может саган коп айтпайтн шгарм осндай дуниены в тебе как я ценю, бырак оте катты багалаймын, осы озмнын узак емес 20 жылдык омырымде и в горе и в радости деп куана турып сены гана айта аламын</div></div>
@@ -230,32 +243,53 @@ Released under the MIT license: http://jsbin.mit-license.org
 <div class="reason" onclick="toggleReason(this)"><b>97.</b> Причина Скоро<div class="reason-content">Полный текст причины 97</div></div>
 <div class="reason" onclick="toggleReason(this)"><b>98.</b> Причина Скоро<div class="reason-content">Полный текст причины 98</div></div>
 <div class="reason" onclick="toggleReason(this)"><b>99.</b> Причина Скоро<div class="reason-content">Полный текст причины 99</div></div>
-<div class="reason" onclick="toggleReason(this)"><b>100.</b> Причина Скоро<div class="reason-content">Полный текст причины 100</div></div>
-    <!-- Добавь остальные причины так же -->
+      <div class="reason" onclick="toggleReason(this)"><b>100.</b> Причина Скоро<div class="reason-content">Полный текст причины 100</div></div>
+      <div class="reason-content">Полный текст причины 100</div>
+    </div>
   </div>
 
   <script>
     let currentQuestion = 1;
 
+    const answers = {
+      1: 'люблю',
+      2: 'сенны',
+      3: 'Сатыбалдиева',
+      4: 'Аю'
+    };
+
     window.onload = () => {
-      document.getElementById('question1').style.display = 'block';
+      showQuestion(1);
     }
 
-    function next(correct) {
-      if (currentQuestion === 1 && correct === 'люблю') {
-        document.getElementById('question1').style.display = 'none';
-        document.getElementById('question2').style.display = 'block';
+    function showQuestion(num) {
+      document.querySelectorAll('.question-block').forEach(b => b.style.display = 'none');
+      const q = document.getElementById('question' + num);
+      if (q) q.style.display = 'block';
+    }
+
+    function next(answer) {
+      if (answers[currentQuestion] === answer) {
         currentQuestion++;
-      } else if (currentQuestion === 2 && correct === 'сенны') {
-        document.getElementById('question2').style.display = 'none';
-        document.getElementById('reasons').style.display = 'block';
+        if (document.getElementById('question' + currentQuestion)) {
+          showQuestion(currentQuestion);
+        } else {
+          document.querySelectorAll('.question-block').forEach(b => b.style.display = 'none');
+          document.getElementById('reasons').style.display = 'block';
+        }
+      } else {
+        resetToFirst();
       }
     }
 
-    function wrongAnswer(btn) {
-      btn.innerText = 'Сумдык кате журека';
-      btn.style.background = '#444';
-      btn.disabled = true;
+    function resetToFirst(btn = null) {
+      if (btn) {
+        btn.innerText = 'Сумдык кате журека';
+        btn.style.background = '#444';
+        btn.disabled = true;
+      }
+      currentQuestion = 1;
+      showQuestion(1);
     }
 
     function toggleReason(el) {
@@ -265,3 +299,4 @@ Released under the MIT license: http://jsbin.mit-license.org
   </script>
 </body>
 </html>
+
