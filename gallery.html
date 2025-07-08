@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Наша галерея</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.8)), url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #ffe5ec;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .media-item {
+      text-align: center;
+    }
+
+    .media-item img,
+    .media-item video {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .media-item img:hover,
+    .media-item video:hover {
+      transform: scale(1.03);
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 15px;
+      color: #ffd9e3;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 40px auto 10px;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      background: #ff85a2;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    a.back:hover {
+      background: #ff5b84;
+    }
+  </style>
+</head>
+<body>
+  <h1>Наши любимые моменты</h1>
+
+  <div class="gallery">
+    <!-- ФОТО -->
+    <div class="media-item">
+      <img src="gallery/photo1.jpg" alt="Фото 1">
+      <div class="caption">Мы тут красивые сидим жабысыып</div>
+    </div>
+
+    <div class="media-item">
+      <img src="gallery/photo2.jpg" alt="Фото 2">
+      <div class="caption">Сены олтырып кушактаватыырм</div>
+    </div>
+
+    <!-- ВИДЕО -->
+    <div class="media-item">
+      <video src="gallery/video1.mp4" controls muted></video>
+      <div class="caption">Коре бергм келетн видеоо</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="index.html" class="back">⬅ Назад к любви</a>
+  </div>
+</body>
+</html>
